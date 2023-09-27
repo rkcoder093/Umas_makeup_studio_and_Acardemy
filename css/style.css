@@ -286,9 +286,9 @@ a:focus {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #1d2434;
+    color: #f8f8f8;
     background: none;
-    border: 2px solid #1d2434;
+    border: 2px solid #f8f8f8;
     border-radius: 0;
     transition: .3s;
 }
