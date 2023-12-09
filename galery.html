@@ -1,446 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Gallery</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free Website Template" name="keywords">
-    <meta content="Free Website Template" name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free Website Template" name="keywords" />
+    <meta content="Free Website Template" name="description" />
 
     <!-- Favicon -->
-    <link href="./img/favicon.ico" rel="icon">
+    <link href="./img/favicon.ico" rel="icon" />
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS Libraries -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-      
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
     <!-- for the second show -->
     <style>
+      /* Additional CSS for the content or other elements on the page */
+      /* Style for the container div */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* Horizontally center images */
+        gap: 10px;
+        /* Add some spacing between containers */
+      }
 
+      /* Style for each image-container */
+      .image-container {
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+      }
 
-        /* Additional CSS for the content or other elements on the page */
-        /* Style for the container div */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            /* Horizontally center images */
-            gap: 10px;
-            /* Add some spacing between containers */
+      /* Style for the images */
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      /* Style for the initial image */
+      .image-container img:first-child {
+        opacity: 1;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
         }
-
-
-        /* Style for each image-container */
-        .image-container {
-            width: 300px;
-            height: 300px;
-            overflow: hidden;
-            position: relative;
+        50% {
+          opacity: 1;
         }
-
-        /* Style for the images */
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            transition: opacity 0.3s ease-in-out;
+        100% {
+          opacity: 0;
         }
+      }
 
-        /* Style for the initial image */
-        .image-container img:first-child {
-            opacity: 1;
-        }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Apply the animation to the h1 element */
-        .animated-text {
-            animation: fadeIn 4s infinite; /* Adjust the duration and animation speed as needed */
-        }
-
-        
+      /* Apply the animation to the h1 element */
+      .animated-text {
+        animation: fadeIn 4s infinite; /* Adjust the duration and animation speed as needed */
+      }
     </style>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!-- Top Bar Start -->
     <div class="top-bar d-none d-md-block">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="top-bar-left">
-                        <div class="text">
-                            <h2>10:30AM - 8:30PM</h2>
-                            <p>Opening Hour Mon -Sun</p>
-                        </div>
-                        <div class="text">
-                            <h2><a href="tel:9916211839">+91-9916211839</a></h2>
-                            <p>Call Us For Appointment</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="top-bar-right">
-                        <div class="social">
-                            <a href=" https://wa.me/+919916211839"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                            <a href="https://m.facebook.com/profile.php/?id=100086689435742"><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                               <a href="https://www.instagram.com/uma_makeupstudio_salon_academy/"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="top-bar-left">
+              <div class="text">
+                <h2>10:30AM - 8:30PM</h2>
+                <p>Opening Hour Mon -Sun</p>
+              </div>
+              <div class="text">
+                <h2><a href="tel:9916211839">+91-9916211839</a></h2>
+                <p>Call Us For Appointment</p>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6">
+            <div class="top-bar-right">
+              <div class="social">
+                <a href=" https://wa.me/+919916211839"
+                  ><i class="fab fa-whatsapp" aria-hidden="true"></i
+                ></a>
+                <a href="https://m.facebook.com/profile.php/?id=100086689435742"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                <a
+                  href="https://www.instagram.com/uma_makeupstudio_salon_academy/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Top Bar End -->
 
     <!-- Nav Bar Start -->
     <div class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container-fluid">
-            <a href="index.html" class="navbar-brand">                <div class="logo" style="text-align: center;">
-                    <div class="brand-name" style="margin-top: 10px;">UMA'S</div>
-                    <div class="slogan"><h5 style="color: azure;margin-bottom: 0px;margin-top: 15px;">Makeup Studio and Academy</h5></div>
-                </div></a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto">
-                    <a href="./index.html" class="nav-item nav-link ">Home</a>
-                    <a href="./about.html" class="nav-item nav-link">About</a>
-                    <a href="./service.html" class="nav-item nav-link">Service</a>
- 
-
-                    <a href="./galery.html" class="nav-item nav-link active">Gallery</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu">
-                            <a href="blog.html" class="dropdown-item">Blog Page</a>
-                            <a href="single.html" class="dropdown-item">Single Page</a>
-                        </div>
-                    </div>
-                    
-                </div>
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">
+          <div class="logo" style="text-align: center;">
+            <div class="brand-name" style="margin-top: 10px;">UMA'S</div>
+            <div class="slogan">
+              <h5 style="color: azure;margin-bottom: 0px;margin-top: 15px;">
+                Makeup Studio and Academy
+              </h5>
             </div>
+          </div></a
+        >
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+        >
+          <div class="navbar-nav ml-auto">
+            <a href="./index.html" class="nav-item nav-link ">Home</a>
+            <a href="./about.html" class="nav-item nav-link">About</a>
+            <a href="./service.html" class="nav-item nav-link">Service</a>
+
+            <a href="./galery.html" class="nav-item nav-link active">Gallery</a>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Pages</a
+              >
+              <div class="dropdown-menu">
+                <a href="blog.html" class="dropdown-item">Blog Page</a>
+                 <a href="#" class="dropdown-item">Single Page</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Nav Bar End -->
 
     <!-- Page Header Start -->
-    <div class="page-header" style="background-image: url(./img/display1.png);  background-repeat: no-repeat;background-size: cover;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Gallery</h2>
-                </div>
-                <div class="col-12">
-                    <a href="">Home</a>
-                    <a href="">Gallery</a>
-                </div>
-            </div>
+    <div
+      class="page-header"
+      style="background-image: url(./img/display1.png);  background-repeat: no-repeat;background-size: cover;"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Gallery</h2>
+          </div>
+          <div class="col-12">
+            <a href="">Home</a>
+            <a href="">Gallery</a>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Page Header End -->
 
     <div class="container-fluid" style="width: 100%;">
-        <h1 class="d-flex align-items-center m-2 animated-text " style="color:black;">Hair Style</h1>
-
-        <div class="container-fluid d-flex flex-wrap justify-content-center" style="border-top: 4px solid black;">
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/HS1.jpg" alt="Image 1">
-                <img src="./img/HS2.jpg" alt="Image 2">
-                <img src="./img/HS3.jpg" alt="Image 3">
-                <img src="./img/HS4.jpg" alt="Image 4">
-                <img src="./img/HS5.jpg" alt="Image 5">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/HS1.jpg" alt="Image 1">
-                <img src="./img/HS2.jpg" alt="Image 2">
-                <img src="./img/HS3.jpg" alt="Image 3">
-                <img src="./img/HS5.jpg" alt="Image 5">
-                <img src="./img/HS4.jpg" alt="Image 4">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/HS1.jpg" alt="Image 1">
-                <img src="./img/HS2.jpg" alt="Image 2">
-                <img src="./img/HS4.jpg" alt="Image 4">
-                <img src="./img/HS5.jpg" alt="Image 5">
-                <img src="./img/HS3.jpg" alt="Image 3">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/HS1.jpg" alt="Image 1">
-                <img src="./img/HS3.jpg" alt="Image 3">
-                <img src="./img/HS4.jpg" alt="Image 4">
-                <img src="./img/HS5.jpg" alt="Image 5">
-                <img src="./img/HS2.jpg" alt="Image 2">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/HS2.jpg" alt="Image 2">
-                <img src="./img/HS3.jpg" alt="Image 3">
-                <img src="./img/HS4.jpg" alt="Image 4">
-                <img src="./img/HS5.jpg" alt="Image 5">
-                <img src="./img/HS1.jpg" alt="Image 1">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/HS2.jpg" alt="Image 2">
-                <img src="./img/HS3.jpg" alt="Image 3">
-                <img src="./img/HS4.jpg" alt="Image 4">
-                <img src="./img/HS5.jpg" alt="Image 5">
-                <img src="./img/HS6.jpg" alt="Image 1">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/HS2.jpg" alt="Image 2">
-                <img src="./img/HS3.jpg" alt="Image 3">
-                <img src="./img/HS4.jpg" alt="Image 4">
-                <img src="./img/HS5.jpg" alt="Image 5">
-                <img src="./img/HS7.jpg" alt="Image 1">
-            </div>
+      <h1
+        class="d-flex align-items-center m-2 animated-text "
+        style="color:black;"
+      >
+        Hair Style
+      </h1>
+      <div
+        class="container-fluid d-flex flex-wrap justify-content-center"
+        style="border-top: 4px solid black;"
+      >
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/HS1.jpg" alt="Image 1" />
+          <img src="./img/HS2.jpg" alt="Image 2" />
+          <img src="./img/HS3.jpg" alt="Image 3" />
+          <img src="./img/HS4.jpg" alt="Image 4" />
+          <img src="./img/HS5.jpg" alt="Image 5" />
         </div>
-        <h1 class="d-flex align-items-center m-2 animated-text" style="color:rgb(0, 0, 0);">Event Management</h1>
-
-        <div class="container-fluid  mt-0 d-flex flex-wrap justify-content-center" style="border-top: 4px solid red;">
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/D1.jpg" alt="Image 1">
-                <img src="./img/D2.jpgg" alt="Image 2">
-                <img src="./img/D3.jpg" alt="Image 3">
-                <img src="./img/D4.jpg" alt="Image 4">
-                <img src="./img/D5.jpg" alt="Image 5">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/D6.jpg" alt="Image 1">
-                <img src="./img/D7.jpgg" alt="Image 2">
-                <img src="./img/D8.jpg" alt="Image 3">
-
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/D9.jpg" alt="Image 1">
-                <img src="./img/D10.jpg" alt="Image 2">
-                <img src="./img/D11.jpg" alt="Image 4">
-                <img src="./img/D12.jpg" alt="Image 4">
-                <img src="./img/D13.jpg" alt="Image 5">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/D14.jpg" alt="Image 1">
-                <img src="./img/D15.jpg" alt="Image 2">
-                <img src="./img/D16.jpg" alt="Image 3">
-                <img src="./img/D17.jpg" alt="Image 4">
-                <img src="./img/D18.jpg" alt="Image 5">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/D19.jpg" alt="Image 1">
-                <img src="./img/D20.jpg" alt="Image 2">
-                <img src="./img/D21.jpg" alt="Image 3">
-                <img src="./img/D22.jpg" alt="Image 4">
-                <img src="./img/D23.jpg" alt="Image 5">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/D24.jpg" alt="Image 1">
-                <img src="./img/D25.jpg" alt="Image 2">
-                <img src="./img/D26.jpg" alt="Image 3">
-                <img src="./img/D26 (2).jpg" alt="Image 4">
-            </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/HS1.jpg" alt="Image 1" />
+          <img src="./img/HS2.jpg" alt="Image 2" />
+          <img src="./img/HS3.jpg" alt="Image 3" />
+          <img src="./img/HS5.jpg" alt="Image 5" />
+          <img src="./img/HS4.jpg" alt="Image 4" />
         </div>
-        <h1 class="d-flex align-items-center m-2 animated-text" style="color:rgb(0, 0, 0);">Makeover</h1>
-        <div class="container-fluid  mt-0 d-flex flex-wrap justify-content-center" style="border-top: 4px solid blue;">
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/408.jpg" alt="Image 4">
-                <img src="./img/404.jpg" alt="Image 3">
-                <img src="./img/402.jpg" alt="Image 2">
-                <img src="./img/407.jpg" alt="Image 8">
-                <img src="./img/406.jpg" alt="Image 7">
-                <img src="./img/405.jpg" alt="Image 6">
-                <img src="./img/403.jpg" alt="Image 5">
-                <img src="./img/401.jpg" alt="Image 1">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/112.jpg" alt="Image 1">
-                <img src="./img/111.jpg" alt="Image 2">
-
-
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/113.jpg" alt="Image 1">
-                <img src="./img/114.jpg" alt="Image 2">
-                <img src="./img/115.jpg" alt="Image 3">
-                <img src="./img/116.jpg" alt="Image 4">
-                <img src="./img/117.jpg" alt="Image 5">
-
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/118.jpg" alt="Image 1">
-                <img src="./img/119.jpg" alt="Image 2">
-                <img src="./img/120.jpg" alt="Image 3">
-                <img src="./img/121.jpg" alt="Image 4">
-                <img src="./img/125.jpg" alt="Image 5">
-                <img src="./img/26.jpg" alt="Image 6">
-                <img src="./img/127.jpg" alt="Image 7">
-                <img src="./img/128.jpg" alt="Image 8">
-                <img src="./img/129.jpg" alt="Image 9">
-                <img src="./img/131.jpg" alt="Image 10">
-                <img src="./img/130.jpg" alt="Image 11">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/122.jpg" alt="Image 1">
-                <img src="./img/123.jpg" alt="Image 2">
-                <img src="./img/124.jpg" alt="Image 3">
-                <img src="./img/132.jpg" alt="Image 4">
-
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/133.jpg" alt="Image 1">
-                <img src="./img/134.jpg" alt="Image 2">
-                <img src="./img/135.jpg" alt="Image 3">
-                <img src="./img/136.jpg" alt="Image 4">
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/1008.jpg" alt="Image 1">
-                <img src="./img/1007.jpg" alt="Image 2">
-                <img src="./img/1009.jpg" alt="Image 3">
-                <img src="./img/1010.jpg" alt="Image 4">
-                <img src="./img/1011.jpg" alt="Image 5">
-                <img src="./img/1012.jpg" alt="Image 6">
-                <img src="./img/1013.jpg" alt="Image 7">
-
-            </div>
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/141.jpg" alt="Image 1">
-                <img src="./img/142.jpg" alt="Image 2">
-                <img src="./img/143.jpg" alt="Image 3">
-                <img src="./img/144.jpg" alt="Image 4">
-                <img src="./img/145.jpg" alt="Image 5">
-                <img src="./img/146.jpg" alt="Image 6">
-                <img src="./img/147.jpg" alt="Image 7">
-                <img src="./img/148.jpg" alt="Image 8">
-                <img src="./img/149.jpg" alt="Image 9">
-                <img src="./img/150.jpg" alt="Image 10">
-                <img src="./img/151.jpg" alt="Image 11">
-
-            </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/HS1.jpg" alt="Image 1" />
+          <img src="./img/HS2.jpg" alt="Image 2" />
+          <img src="./img/HS4.jpg" alt="Image 4" />
+          <img src="./img/HS5.jpg" alt="Image 5" />
+          <img src="./img/HS3.jpg" alt="Image 3" />
         </div>
-        <h1 class="d-flex align-items-center m-2 animated-text" style="color:rgb(0, 0, 0);">Helloween Makeup</h1>
-        <div class="container-fluid  mt-0 d-flex flex-wrap justify-content-center" style="border-top: 4px solid brown;">
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/H1.jpg" alt="Image 1">
-                <img src="./img/H2.jpgg" alt="Image 2">
-                <img src="./img/H3.jpg" alt="Image 3">
-            </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/HS1.jpg" alt="Image 1" />
+          <img src="./img/HS3.jpg" alt="Image 3" />
+          <img src="./img/HS4.jpg" alt="Image 4" />
+          <img src="./img/HS5.jpg" alt="Image 5" />
+          <img src="./img/HS2.jpg" alt="Image 2" />
         </div>
-
-        <h1 class="d-flex align-items-center m-2 animated-text" style="color:rgb(0, 0, 0);">Others</h1>
-        <div class="container-fluid  mt-0 d-flex flex-wrap justify-content-center" style="border-top: 4px solid blue;">
-            <div class="image-container m-2" onmouseover="startSlideshow(this)" onmouseout="stopSlideshow(this)">
-                <img src="./img/301.jpg" alt="Image 2">
-                <img src="./img/302.jpg" alt="Image 3">
-                <img src="./img/303.jpg" alt="Image 4">
-                <img src="./img/304.jpg" alt="Image 5">
-                <img src="./img/305.jpg" alt="Image 6">
-                <img src="./img/306.jpg" alt="Image 7">
-                <img src="./img/G1.jpg" alt="Image 1">
-
-            </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/HS2.jpg" alt="Image 2" />
+          <img src="./img/HS3.jpg" alt="Image 3" />
+          <img src="./img/HS4.jpg" alt="Image 4" />
+          <img src="./img/HS5.jpg" alt="Image 5" />
+          <img src="./img/HS1.jpg" alt="Image 1" />
         </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/HS2.jpg" alt="Image 2" />
+          <img src="./img/HS3.jpg" alt="Image 3" />
+          <img src="./img/HS4.jpg" alt="Image 4" />
+          <img src="./img/HS5.jpg" alt="Image 5" />
+          <img src="./img/HS6.jpg" alt="Image 1" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/HS2.jpg" alt="Image 2" />
+          <img src="./img/HS3.jpg" alt="Image 3" />
+          <img src="./img/HS4.jpg" alt="Image 4" />
+          <img src="./img/HS5.jpg" alt="Image 5" />
+          <img src="./img/HS7.jpg" alt="Image 1" />
+        </div>
+      </div>
+
+      <h1
+        class="d-flex align-items-center m-2 animated-text"
+        style="color:rgb(0, 0, 0);"
+      >
+        Event Management
+      </h1>
+      <div
+        class="container-fluid  mt-0 d-flex flex-wrap justify-content-center"
+        style="border-top: 4px solid red;"
+      >
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/D1.jpg" alt="Image 1" />
+          <img src="./img/D2.jpg" alt="Image 2" />
+          <img src="./img/D3.jpg" alt="Image 3" />
+          <img src="./img/D4.jpg" alt="Image 4" />
+          <img src="./img/D5.jpg" alt="Image 5" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/D6.jpg" alt="Image 1" />
+          <img src="./img/D7.jpg" alt="Image 2" />
+          <img src="./img/D8.jpg" alt="Image 3" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/D9.jpg" alt="Image 1" />
+          <img src="./img/D10.jpg" alt="Image 2" />
+          <img src="./img/D11.jpg" alt="Image 4" />
+          <img src="./img/D12.jpg" alt="Image 4" />
+          <img src="./img/D13.jpg" alt="Image 5" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/D14.jpg" alt="Image 1" />
+          <img src="./img/D15.jpg" alt="Image 2" />
+          <img src="./img/D16.jpg" alt="Image 3" />
+          <img src="./img/D17.jpg" alt="Image 4" />
+          <img src="./img/D18.jpg" alt="Image 5" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/D19.jpg" alt="Image 1" />
+          <img src="./img/D20.jpg" alt="Image 2" />
+          <img src="./img/D21.jpg" alt="Image 3" />
+          <img src="./img/D22.jpg" alt="Image 4" />
+          <img src="./img/D23.jpg" alt="Image 5" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/D24.jpg" alt="Image 1" />
+          <img src="./img/D25.jpg" alt="Image 2" />
+          <img src="./img/D26.jpg" alt="Image 3" />
+          <img src="./img/D26 (2).jpg" alt="Image 4" />
+        </div>
+      </div>
+
+      <h1
+        class="d-flex align-items-center m-2 animated-text"
+        style="color:rgb(0, 0, 0);"
+      >
+        Makeover
+      </h1>
+      <div
+        class="container-fluid  mt-0 d-flex flex-wrap justify-content-center"
+        style="border-top: 4px solid blue;"
+      >
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/408.jpg" alt="Image 4" />
+          <img src="./img/404.jpg" alt="Image 3" />
+          <img src="./img/402.jpg" alt="Image 2" />
+          <img src="./img/407.jpg" alt="Image 8" />
+          <img src="./img/406.jpg" alt="Image 7" />
+          <img src="./img/405.jpg" alt="Image 6" />
+          <img src="./img/403.jpg" alt="Image 5" />
+          <img src="./img/401.jpg" alt="Image 1" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/112.jpg" alt="Image 1" />
+          <img src="./img/111.jpg" alt="Image 2" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/113.jpg" alt="Image 1" />
+          <img src="./img/114.jpg" alt="Image 2" />
+          <img src="./img/115.jpg" alt="Image 3" />
+          <img src="./img/116.jpg" alt="Image 4" />
+          <img src="./img/117.jpg" alt="Image 5" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/118.jpg" alt="Image 1" />
+          <img src="./img/119.jpg" alt="Image 2" />
+          <img src="./img/120.jpg" alt="Image 3" />
+          <img src="./img/121.jpg" alt="Image 4" />
+          <img src="./img/125.jpg" alt="Image 5" />
+          <img src="./img/26.jpg" alt="Image 6" />
+          <img src="./img/127.jpg" alt="Image 7" />
+          <img src="./img/128.jpg" alt="Image 8" />
+          <img src="./img/129.jpg" alt="Image 9" />
+          <img src="./img/131.jpg" alt="Image 10" />
+          <img src="./img/130.jpg" alt="Image 11" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/122.jpg" alt="Image 1" />
+          <img src="./img/123.jpg" alt="Image 2" />
+          <img src="./img/124.jpg" alt="Image 3" />
+          <img src="./img/132.jpg" alt="Image 4" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/133.jpg" alt="Image 1" />
+          <img src="./img/134.jpg" alt="Image 2" />
+          <img src="./img/135.jpg" alt="Image 3" />
+          <img src="./img/136.jpg" alt="Image 4" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/1008.jpg" alt="Image 1" />
+          <img src="./img/1007.jpg" alt="Image 2" />
+          <img src="./img/1009.jpg" alt="Image 3" />
+          <img src="./img/1010.jpg" alt="Image 4" />
+          <img src="./img/1011.jpg" alt="Image 5" />
+          <img src="./img/1012.jpg" alt="Image 6" />
+          <img src="./img/1013.jpg" alt="Image 7" />
+        </div>
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/141.jpg" alt="Image 1" />
+          <img src="./img/142.jpg" alt="Image 2" />
+          <img src="./img/143.jpg" alt="Image 3" />
+          <img src="./img/144.jpg" alt="Image 4" />
+          <img src="./img/145.jpg" alt="Image 5" />
+          <img src="./img/146.jpg" alt="Image 6" />
+          <img src="./img/147.jpg" alt="Image 7" />
+          <img src="./img/148.jpg" alt="Image 8" />
+          <img src="./img/149.jpg" alt="Image 9" />
+          <img src="./img/150.jpg" alt="Image 10" />
+          <img src="./img/151.jpg" alt="Image 11" />
+        </div>
+      </div>
+
+      <h1
+        class="d-flex align-items-center m-2 animated-text"
+        style="color:rgb(0, 0, 0);"
+      >
+        Custom Costume Photo-Shoot
+      </h1>
+      <div
+        class="container-fluid  mt-0 d-flex flex-wrap justify-content-center"
+        style="border-top: 4px solid rgb(119, 49, 184);"
+      >
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/cd5.jpg" alt="Image 2" />
+          <img src="./img/cd6.jpg" alt="Image 8" />
+          <img src="./img/cd7.jpg" alt="Image 7" />
+          <img src="./img/cd8.jpg" alt="Image 6" />
+          <img src="./img/cd9.jpg" alt="Image 5" />
+        </div>
+        <div
+        class="image-container m-2"
+        onmouseover="startSlideshow(this)"
+        onmouseout="stopSlideshow(this)"
+      >
+      <img src="./img/cd3.jpg" alt="Image 1" />
+      <img src="./img/cd4.jpg" alt="Image 2" />
+      <img src="./img/cd10.jpg" alt="Image 3" />
+      <img src="./img/cd11.jpg" alt="Image 4" />
+      <img src="./img/cd12.jpg" alt="Image 5" />
+      </div>
+      </div>
+
+      <h1
+        class="d-flex align-items-center m-2 animated-text"
+        style="color:rgb(0, 0, 0);"
+      >
+        Helloween Makeup
+      </h1>
+      <div
+        class="container-fluid  mt-0 d-flex flex-wrap justify-content-center"
+        style="border-top: 4px solid brown;"
+      >
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/H1.jpg" alt="Image 1" />
+          <img src="./img/H2.jpgg" alt="Image 2" />
+          <img src="./img/H3.jpg" alt="Image 3" />
+        </div>
+      </div>
+
+      <h1
+        class="d-flex align-items-center m-2 animated-text"
+        style="color:rgb(0, 0, 0);"
+      >
+        Others
+      </h1>
+      <div
+        class="container-fluid  mt-0 d-flex flex-wrap justify-content-center"
+        style="border-top: 4px solid blue;"
+      >
+        <div
+          class="image-container m-2"
+          onmouseover="startSlideshow(this)"
+          onmouseout="stopSlideshow(this)"
+        >
+          <img src="./img/301.jpg" alt="Image 2" />
+          <img src="./img/302.jpg" alt="Image 3" />
+          <img src="./img/303.jpg" alt="Image 4" />
+          <img src="./img/304.jpg" alt="Image 5" />
+          <img src="./img/305.jpg" alt="Image 6" />
+          <img src="./img/306.jpg" alt="Image 7" />
+          <img src="./img/G1.jpg" alt="Image 1" />
+        </div>
+      </div>
     </div>
 
     <!-- Footer Start -->
     <div class="footer">
-        <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
             <div class="row">
-                <div class="col-lg-7">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="footer-contact">
-                                <h2> Contact Us</h2>
-                                <p><i class="fa fa-map-marker-alt"></i>karnataka</p>
-                                <p><i class="fa fa-phone-alt"></i><a href="tel:+919916211839">+91-9916211839</a></p>
-                                <p><i class="fa fa-envelope"></i>info@example.com</p>
-                                <div class="footer-social">
-                                    <a href=" https://wa.me/+919916211839"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                                    <a href="https://m.facebook.com/profile.php/?id=100086689435742"><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-youtube"></i></a>
-                                       <a href="https://www.instagram.com/uma_makeupstudio_salon_academy/"><i class="fab fa-instagram"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="footer-link">
-                                <h2>Quick Links</h2>
-                                <a href="./index.html">Home</a>
-                                <a href="./service.html">Services</a>
-                                <a href="./galery.html">Gallery</a>
-                                <a href="/about.html">About Us</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
+              <div class="col-md-6">
+                <div class="footer-contact">
+                  <h2>Contact Us</h2>
+                  <p><i class="fa fa-map-marker-alt"></i>karnataka</p>
+                  <p>
+                    <i class="fa fa-phone-alt"></i
+                    ><a href="tel:+919916211839">+91-9916211839</a>
+                  </p>
+                  <p><i class="fa fa-envelope"></i>info@example.com</p>
+                  <div class="footer-social">
+                    <a href=" https://wa.me/+919916211839"
+                      ><i class="fab fa-whatsapp" aria-hidden="true"></i
+                    ></a>
+                    <a
+                      href="https://m.facebook.com/profile.php/?id=100086689435742"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                    <a
+                      href="https://www.instagram.com/uma_makeupstudio_salon_academy/"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                  </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="footer-newsletter">
-                        <h2>Google Map</h2>
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.2796851850767!2d77.10956607335642!3d13.332870406858307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02dfcb2409e95%3A0xeebd82d2db9db307!2sUmas%20makeup%20studio%20salon%20and%20academy!5e0!3m2!1sen!2sin!4v1695787181268!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+              </div>
+              <div class="col-md-6">
+                <div class="footer-link">
+                  <h2>Quick Links</h2>
+                  <a href="./index.html">Home</a>
+                  <a href="./service.html">Services</a>
+                  <a href="./galery.html">Gallery</a>
+                  <a href="/about.html">About Us</a>
+                  <a href="">FQAs</a>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="footer-newsletter">
+              <h2>Google Map</h2>
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.2796851850767!2d77.10956607335642!3d13.332870406858307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02dfcb2409e95%3A0xeebd82d2db9db307!2sUmas%20makeup%20studio%20salon%20and%20academy!5e0!3m2!1sen!2sin!4v1695787181268!5m2!1sen!2sin"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Footer End -->
-
-
 
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- JavaScript Libraries -->
 
     <script>
-        function startSlideshow(container) {
-            let currentImageIndex = 0;
-            let images = container.querySelectorAll('img');
-            let intervalId = setInterval(changeImage, 1000);
+      function startSlideshow(container) {
+        let currentImageIndex = 0;
+        let images = container.querySelectorAll("img");
+        let intervalId = setInterval(changeImage, 1000);
 
-            function changeImage() {
-                images[currentImageIndex].style.opacity = 0;
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                images[currentImageIndex].style.opacity = 1;
-            }
-
-            container.dataset.intervalId = intervalId;
+        function changeImage() {
+          images[currentImageIndex].style.opacity = 0;
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          images[currentImageIndex].style.opacity = 1;
         }
 
-        function stopSlideshow(container) {
-            clearInterval(container.dataset.intervalId);
-        }
+        container.dataset.intervalId = intervalId;
+      }
+
+      function stopSlideshow(container) {
+        clearInterval(container.dataset.intervalId);
+      }
     </script>
-    
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
-   
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
@@ -448,6 +647,5 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>
